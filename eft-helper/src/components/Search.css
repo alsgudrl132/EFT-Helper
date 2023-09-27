@@ -1,0 +1,18 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    background-color: #f1efef;
+    width: 70%;
+    border-radius: 10px;
+    opacity: 0.8;
+    margin-top: 50px;
+}
+.search-container input {
+    border: 0;
+    background-color: transparent;
+    font-size: 45px;
+    padding: 5px 0px;
+    width: 100%;
+    color: #191717;
+    text-align: center;
+}
