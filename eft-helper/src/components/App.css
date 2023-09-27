@@ -1,6 +1,6 @@
 .background::before {
     content: '';
-    background-image: url('../images/main.jpg');
+    background-image: url('../images/main5.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.7;

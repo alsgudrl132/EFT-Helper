@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     align-items: center;
 }
-.ammo-container button {
+.ammo-btn {
     border: 0;
     background-color: transparent;
     font-size: 25px;
