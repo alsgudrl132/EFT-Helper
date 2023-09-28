@@ -7,6 +7,10 @@
     opacity: 0.8;
     margin-top: 50px;
 }
+.center-container {
+    display: flex;
+    justify-content: center;
+}
 .search-container input {
     border: 0;
     background-color: transparent;

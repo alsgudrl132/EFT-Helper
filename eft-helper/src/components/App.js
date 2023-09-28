@@ -3,7 +3,6 @@ import '../reset.css';
 import mainlogo from '../images/logo2.png';
 import Nav from './Nav';
 import Search from './Search';
-import Ammo from './Ammo';
 function App() {
     return (
         <div className="background">
@@ -13,7 +12,6 @@ function App() {
             </div>
             <Nav />
             <Search />
-            <Ammo />
         </div>
     );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Ammo.css';
+import AmmoData from './AmmoData';
 
-const Ammo = () => {
+const Ammo = (props) => {
     const [activeButton, setActiveButton] = useState(null);
     const [hoveredButton, setHoveredButton] = useState(null);
 
@@ -55,21 +56,39 @@ const Ammo = () => {
     ];
 
     return (
-        <div className="container">
-            <div className="ammo-container">
-                {buttons.map((btn, index) => (
-                    <button
-                        key={index}
-                        className="ammo-btn"
-                        style={getButtonStyle(btn)}
-                        onMouseEnter={() => handleMouseEnter(btn)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => handleMouseClick(btn)}
-                    >
-                        {btn}
-                    </button>
-                ))}
+        <div>
+            <div className="container">
+                <div className="ammo-container">
+                    {props.searchValue !== ''
+                        ? buttons
+                              .filter((btn) => btn.includes(props.searchValue))
+                              .map((btn, index) => (
+                                  <button
+                                      key={index}
+                                      className="ammo-btn"
+                                      style={getButtonStyle(btn)}
+                                      onMouseEnter={() => handleMouseEnter(btn)}
+                                      onMouseLeave={handleMouseLeave}
+                                      onClick={() => handleMouseClick(btn)}
+                                  >
+                                      {btn}
+                                  </button>
+                              ))
+                        : buttons.map((btn, index) => (
+                              <button
+                                  key={index}
+                                  className="ammo-btn"
+                                  style={getButtonStyle(btn)}
+                                  onMouseEnter={() => handleMouseEnter(btn)}
+                                  onMouseLeave={handleMouseLeave}
+                                  onClick={() => handleMouseClick(btn)}
+                              >
+                                  {btn}
+                              </button>
+                          ))}
+                </div>
             </div>
+            <AmmoData />
         </div>
     );
 };
