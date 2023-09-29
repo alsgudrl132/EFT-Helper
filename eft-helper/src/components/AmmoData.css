@@ -1,21 +1,21 @@
 .ammo-table {
-    margin-top: 50px;
-    width: 70%;
-    opacity: 0.8;
+  margin-top: 50px;
+  width: 70%;
+  opacity: 0.8;
 }
 .ammo-tr td,
 .ammo-tr th {
-    text-align: center;
-    font-size: 40px;
-    margin-left: 50px;
+  text-align: center;
+  font-size: 30px;
+  margin-left: 50px;
 }
 .ammo-tr {
-    background-color: #f1efef;
+  background-color: #f1efef;
 }
 .ammo-tr td {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 .ammo-tr img {
-    width: 45px;
-    margin-top: 5px;
+  width: 45px;
+  margin-top: 5px;
 }

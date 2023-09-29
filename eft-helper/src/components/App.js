@@ -1,19 +1,18 @@
-import './App.css';
-import '../reset.css';
-import mainlogo from '../images/logo2.png';
-import Nav from './Nav';
-import Search from './Search';
+import "./App.css";
+import "../reset.css";
+import Main from "./Main";
+import Armor from "./Armor";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
-    return (
-        <div className="background">
-            <div className="container">
-                <img src={mainlogo} alt="logo" />
-                <h1>Helper</h1>
-            </div>
-            <Nav />
-            <Search />
-        </div>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/armor" element={<Armor />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
