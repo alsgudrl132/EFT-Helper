@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Nav.css';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     const [activeButton, setActiveButton] = useState(null);
@@ -24,21 +25,22 @@ const Nav = () => {
         };
     };
 
-    const buttons = ['탄약', '방탄', '플리마켓', '지도'];
+    const buttons = ['Ammo', 'Armor', 'Market', 'Map'];
 
     return (
         <div className="container">
             <div className="nav-container">
                 {buttons.map((button, index) => (
-                    <button
-                        key={index}
-                        style={getButtonStyle(button)}
-                        onMouseEnter={() => handleMouseEnter(button)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => handleButtonClick(button)}
-                    >
-                        {button}
-                    </button>
+                    <Link to={`/${button}`} key={index}>
+                        <button
+                            style={getButtonStyle(button)}
+                            onMouseEnter={() => handleMouseEnter(button)}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={() => handleButtonClick(button)}
+                        >
+                            {button}
+                        </button>
+                    </Link>
                 ))}
             </div>
         </div>

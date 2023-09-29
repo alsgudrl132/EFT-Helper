@@ -1,6 +1,6 @@
 .nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #f1efef;
     width: 70%;
     border-radius: 10px;
@@ -15,5 +15,4 @@
     background-color: #f1efef;
     border: 1px solid black;
     border-radius: 10px;
-    width: 20%;
 }
