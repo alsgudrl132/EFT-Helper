@@ -1,8 +1,7 @@
-import mainlogo from '../images/logo2.png';
-import Nav from './Nav';
-import Search from './ammo/Search';
+import mainlogo from '../../images/logo2.png';
+import Nav from '../Nav';
 
-const Main = () => {
+const Armor = () => {
     return (
         <div className="background">
             <div className="container">
@@ -10,8 +9,7 @@ const Main = () => {
                 <h1>Helper</h1>
             </div>
             <Nav />
-            <Search />
         </div>
     );
 };
-export default Main;
+export default Armor;

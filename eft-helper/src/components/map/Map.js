@@ -1,8 +1,8 @@
-import mainlogo from '../images/logo2.png';
-import Nav from './Nav';
-import Search from './ammo/Search';
+import mainlogo from '../../images/logo2.png';
+import Nav from '../Nav';
+import MapInfo from './MapInfo';
 
-const Main = () => {
+const Map = () => {
     return (
         <div className="background">
             <div className="container">
@@ -10,8 +10,8 @@ const Main = () => {
                 <h1>Helper</h1>
             </div>
             <Nav />
-            <Search />
+            <MapInfo />
         </div>
     );
 };
-export default Main;
+export default Map;

@@ -30,10 +30,22 @@ const AmmoData = () => {
 
         fetchData();
     }, []);
-
+    const colors = ['#4CF057', '#87D43D', '#C0B825', '#F99D10', '#EA6B0A', '#DC3B07', '#CF0B04'];
+    function getRecoilStyle(recoilValue) {
+        if (recoilValue > 0) {
+            return colors[6];
+        } else if (recoilValue < 0) {
+            return colors[0];
+        }
+    }
+    function getAccuracyStyle(accuracyValue) {
+        if (accuracyValue > 0) {
+            return colors[0];
+        } else if (accuracyValue < 0) {
+            return colors[6];
+        }
+    }
     function getPenetrateStyle(level) {
-        const colors = ['#4CF057', '#87D43D', '#C0B825', '#F99D10', '#EA6B0A', '#DC3B07', '#CF0B04'];
-
         level = Math.min(Math.max(level, 1), 6);
 
         return colors[7 - level];
@@ -63,8 +75,8 @@ const AmmoData = () => {
                         </td>
                         <td>m855a1</td>
                         <td>49</td>
-                        <td>5</td>
-                        <td>-10%</td>
+                        <td style={{ backgroundColor: getRecoilStyle(5), color: 'white' }}>5</td>
+                        <td style={{ backgroundColor: getAccuracyStyle(-10), color: 'white' }}>-10%</td>
                         <td style={{ backgroundColor: getPenetrateStyle(6) }} className="class1">
                             6
                         </td>
