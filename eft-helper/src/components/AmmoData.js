@@ -38,7 +38,7 @@ const AmmoData = () => {
     level = Math.min(Math.max(level, 1), 6);
 
     // 배열 인덱스로 색상 선택
-    return colors[7 - level]; // 1단계일 때 colors[6], 2단계일 때 colors[5], ...
+    return colors[7 - level];
   }
   return (
     <div className="container">
