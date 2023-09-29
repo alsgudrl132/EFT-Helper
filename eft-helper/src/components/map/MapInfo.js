@@ -8,10 +8,22 @@ import shorelineBgImg from '../../images/shoreline.jpeg';
 import streetsOfTarkovBgImg from '../../images/streetsOfTarkov.jpeg';
 import woodBgImg from '../../images/wood.jpeg';
 
+import customMap from '../../images/customMap.png';
+import factoryMap from '../../images/factoryMap.png';
+import interchangeMap from '../../images/interchangeMap.png';
+import labMap from '../../images/labMap.png';
+import lightHouseMap from '../../images/lightHouseMap.png';
+import reserveMap from '../../images/reserveMap.png';
+import shorelineMap from '../../images/shorelineMap.png';
+import streetsOfTarkovMap from '../../images/streetsOfTarkovMap.jpeg';
+import woodMap from '../../images/woodMap.png';
+
 import './MapInfo.css';
+import { useState } from 'react';
 
 const MapInfo = () => {
-    const maps = [
+    const [selectedMap, setSelectedMap] = useState(null);
+    const bgMaps = [
         { img: customBgImg, text: '세관' },
         { img: factoryBgImg, text: '공장' },
         { img: interchangeBgImg, text: '인터체인지' },
@@ -22,12 +34,28 @@ const MapInfo = () => {
         { img: streetsOfTarkovBgImg, text: '스트리트 오브 타르코프' },
         { img: woodBgImg, text: '삼림' },
     ];
+    const maps = [
+        customMap,
+        factoryMap,
+        interchangeMap,
+        labMap,
+        lightHouseMap,
+        reserveMap,
+        shorelineMap,
+        streetsOfTarkovMap,
+        woodMap,
+    ];
+    const onClickBgImg = (bgMap) => setSelectedMap(bgMap);
     return (
         <div>
             <div className="map-container">
-                {maps.map((bgMap) => (
-                    <div className="map-wrapper">
-                        <img src={bgMap.img} alt={bgMap} />
+                {bgMaps.map((bgMap, index) => (
+                    <div className="map-wrapper" key={index}>
+                        <img
+                            src={selectedMap === bgMap.text ? maps[index] : bgMap.img}
+                            alt={bgMap}
+                            onClick={() => onClickBgImg(bgMap.text)}
+                        />
                         <div className="map-overlay">{bgMap.text}</div>
                     </div>
                 ))}
