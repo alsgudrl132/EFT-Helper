@@ -18,11 +18,13 @@ import shorelineMap from '../../images/shorelineMap.png';
 import streetsOfTarkovMap from '../../images/streetsOfTarkovMap.jpeg';
 import woodMap from '../../images/woodMap.png';
 
+import MapModal from './MapModal';
 import './MapInfo.css';
 import { useState } from 'react';
 
 const MapInfo = () => {
     const [selectedMap, setSelectedMap] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const bgMaps = [
         { img: customBgImg, text: '세관' },
         { img: factoryBgImg, text: '공장' },
@@ -45,7 +47,13 @@ const MapInfo = () => {
         streetsOfTarkovMap,
         woodMap,
     ];
-    const onClickBgImg = (bgMap) => setSelectedMap(bgMap);
+    const onClickBgImg = (bgMap) => {
+        setSelectedMap(bgMap);
+        setIsModalOpen(true);
+    };
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
     return (
         <div>
             <div className="map-container">
@@ -60,6 +68,13 @@ const MapInfo = () => {
                     </div>
                 ))}
             </div>
+            {isModalOpen && (
+                <MapModal
+                    mapSrc={maps[bgMaps.findIndex((bgMap) => bgMap.text === selectedMap)]}
+                    altText={selectedMap}
+                    closeModal={closeModal}
+                />
+            )}
         </div>
     );
 };
