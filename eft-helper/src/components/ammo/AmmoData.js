@@ -50,6 +50,13 @@ const AmmoData = () => {
 
         return colors[7 - level];
     }
+    // async function logJSONData() {
+    //     const response = await fetch('https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year');
+    //     const jsonData = await response.json();
+    //     console.log(jsonData);
+    // }
+    // logJSONData();
+
     return (
         <div className="container">
             <table className="ammo-table">

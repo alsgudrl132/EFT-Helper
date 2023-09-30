@@ -1,5 +1,7 @@
 import mainlogo from '../../images/logo2.png';
 import Nav from '../Nav';
+import MarketInfo from './MarketInfo';
+import MarketSearch from './MarketSearch';
 
 const Market = () => {
     return (
@@ -9,6 +11,8 @@ const Market = () => {
                 <h1>Helper</h1>
             </div>
             <Nav />
+            <MarketSearch />
+            <MarketInfo />
         </div>
     );
 };

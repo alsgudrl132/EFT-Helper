@@ -1,0 +1,13 @@
+.market-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.market-tbody-tr {
+    border: 1px solid black;
+}
+.market-tbody-tr td {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+}
