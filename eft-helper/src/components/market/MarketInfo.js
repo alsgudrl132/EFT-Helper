@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import './MarketInfo.css';
+import Paging from './Paging';
 
 const MarketInfo = () => {
-    const [marketData, setMarketData] = useState([]); // 상태 추가
-    const [pageNumber, setPageNumber] = useState(1);
-    const [pageSize, setPageSize] = useState(20);
+    const [marketData, setMarketData] = useState([]);
+    const [currentData, setCurrentData] = useState([]);
+    const [dataPerPage, setDataPerPage] = useState(15);
+    const [page, setPage] = useState(1);
+
+    const handlePageChange = (pageNumber) => {
+        setPage(pageNumber);
+    };
+
     useEffect(() => {
-        fetchMarketData();
-    }, [pageNumber, pageSize]);
-    function fetchMarketData() {
         fetch('https://api.tarkov.dev/graphql', {
             method: 'POST',
             headers: {
@@ -17,22 +21,27 @@ const MarketInfo = () => {
             },
             body: JSON.stringify({
                 query: `{
-            items {
-                id
-                name
-                iconLink
-                updated
-                lastLowPrice
-            }
-        }`,
+                items {
+                    id
+                    name
+                    iconLink
+                    updated
+                    lastLowPrice
+                }
+            }`,
             }),
         })
             .then((r) => r.json())
             .then((data) => {
                 console.log('data returned:', data);
-                setMarketData(data.data.items); // 마켓 데이터 업데이트
+                const reversedData = [...data.data.items].reverse();
+                setMarketData(reversedData); // 마켓 데이터 업데이트
+
+                const indexOfLastData = page * dataPerPage;
+                const indexOfFirstData = indexOfLastData - dataPerPage;
+                setCurrentData(reversedData.slice(indexOfFirstData, indexOfLastData));
             });
-    }
+    }, [page, dataPerPage]);
 
     return (
         <div className="market-container">
@@ -46,10 +55,10 @@ const MarketInfo = () => {
                     </tr>
                 </thead>
                 <tbody className="market-tbody">
-                    {marketData.map((data) => (
+                    {currentData.map((data) => (
                         <tr key={data.id} className="market-tbody-tr">
                             <td>
-                                <img src={data.iconLink} />
+                                <img src={data.iconLink} alt={data.name} />
                             </td>
                             <td>{data.name}</td>
                             <td>{data.lastLowPrice}</td>
@@ -58,7 +67,16 @@ const MarketInfo = () => {
                     ))}
                 </tbody>
             </table>
+
+            <Paging
+                totalCount={marketData.length}
+                page={page}
+                dataPerPage={dataPerPage}
+                pageRangeDisplayed={5}
+                handlePageChange={handlePageChange}
+            />
         </div>
     );
 };
+
 export default MarketInfo;

@@ -2,12 +2,73 @@
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    flex-direction: column;
 }
-.market-tbody-tr {
-    border: 1px solid black;
+th {
+    color: #f1efef;
+    background-color: black;
+    padding: 10px 0px;
+}
+.market-tbody-tr :nth-child(n + 2) {
+    background-color: #f1efef;
+    opacity: 0.8;
 }
 .market-tbody-tr td {
     text-align: center;
     vertical-align: middle;
     border: 1px solid black;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul.pagination li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f1efef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+ul.pagination li:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+ul.pagination li:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+ul.pagination li a {
+    text-decoration: none;
+    color: #f1efef;
+    font-size: 1rem;
+}
+
+ul.pagination li.active a {
+    color: white;
+}
+
+ul.pagination li.active {
+    background-color: #337ab7;
+}
+
+ul.pagination li a:hover,
+ul.pagination li a.active {
+    color: blue;
+}
+
+.page-selection {
+    width: 48px;
+    height: 30px;
+    color: #337ab7;
 }
