@@ -1,21 +1,27 @@
-.ammo-table {
-    margin-top: 50px;
-    width: 70%;
+.ammo-text-container {
+    display: flex;
+    justify-content: center;
+}
+.ammo-text-container h2 {
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.ammo-container {
+    margin-top: 25px;
+    flex-direction: column;
+}
+th {
+    color: #f1efef;
+    background-color: black;
+    padding: 10px 0px;
+}
+.ammo-tbody-tr :nth-child(n + 2) {
+    background-color: #f1efef;
     opacity: 0.8;
 }
-.ammo-tr td,
-.ammo-tr th {
+.ammo-tbody-tr td {
     text-align: center;
-    font-size: 30px;
-    margin-left: 50px;
-}
-.ammo-tr {
-    background-color: #f1efef;
-}
-.ammo-tr td {
+    vertical-align: middle;
     border: 1px solid black;
-}
-.ammo-tr img {
-    width: 45px;
-    margin-top: 5px;
 }
