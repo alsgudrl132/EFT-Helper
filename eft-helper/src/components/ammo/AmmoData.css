@@ -1,27 +1,53 @@
 .ammo-text-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
 }
 .ammo-text-container h2 {
-    font-size: 20px;
-    margin: 10px 0px;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+.ammo-text-container h2:first-child {
+  background-color: black;
+  color: #f1efef;
+}
+.ammo-text-container :nth-child(n + 2) {
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .ammo-container {
-    margin-top: 25px;
-    flex-direction: column;
+  margin-top: 25px;
+  flex-direction: column;
 }
 th {
-    color: #f1efef;
-    background-color: black;
-    padding: 10px 0px;
+  color: #f1efef;
+  background-color: black;
+  padding: 10px 0px;
 }
 .ammo-tbody-tr :nth-child(n + 2) {
-    background-color: #f1efef;
-    opacity: 0.8;
+  background-color: #f1efef;
 }
 .ammo-tbody-tr td {
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+#h2-class1 {
+  background-color: #dc3b07;
+}
+#h2-class2 {
+  background-color: #ea6b0a;
+}
+#h2-class3 {
+  background-color: #f99d10;
+}
+#h2-class4 {
+  background-color: #c0b825;
+}
+#h2-class5 {
+  background-color: #87d43d;
+}
+#h2-class6 {
+  background-color: #4cf057;
 }
