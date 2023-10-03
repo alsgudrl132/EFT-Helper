@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MarketInfo.css';
 import Paging from './Paging';
+import MarketSearch from './MarketSearch';
 
 const MarketInfo = () => {
     const [marketData, setMarketData] = useState([]);
     const [currentData, setCurrentData] = useState([]);
     const [dataPerPage, setDataPerPage] = useState(15);
     const [page, setPage] = useState(1);
+    const [searchValue, setSearchValue] = useState('');
 
     const handlePageChange = (pageNumber) => {
         setPage(pageNumber);
@@ -21,21 +23,20 @@ const MarketInfo = () => {
             },
             body: JSON.stringify({
                 query: `{
-                items {
-                    id
-                    name
-                    iconLink
-                    updated
-                    lastLowPrice
-                }
-            }`,
+                    items {
+                        id
+                        name
+                        iconLink
+                        updated
+                        lastLowPrice
+                    }
+                }`,
             }),
         })
             .then((r) => r.json())
             .then((data) => {
-                console.log('data returned:', data);
                 const reversedData = [...data.data.items].reverse();
-                setMarketData(reversedData); // 마켓 데이터 업데이트
+                setMarketData(reversedData);
 
                 const indexOfLastData = page * dataPerPage;
                 const indexOfFirstData = indexOfLastData - dataPerPage;
@@ -43,8 +44,25 @@ const MarketInfo = () => {
             });
     }, [page, dataPerPage]);
 
+    const handleSearchChange = (searchTerm) => {
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+        setSearchValue(lowerCaseSearchTerm);
+
+        const filteredData = marketData.filter((item) => item.name.toLowerCase().includes(lowerCaseSearchTerm));
+
+        const newPage = 1; // 검색 결과에서는 항상 첫 페이지만 보여줍니다.
+        const newDataPerPage = filteredData.length <= dataPerPage ? filteredData.length : 15;
+
+        setDataPerPage(newDataPerPage);
+        setPage(newPage);
+        setCurrentData(filteredData.slice(0, newDataPerPage));
+    };
+
     return (
         <div className="market-container">
+            <MarketSearch onSearch={handleSearchChange} />
+
             <table className="market-table">
                 <thead className="market-thead">
                     <tr className="market-thead-tr">
@@ -68,13 +86,15 @@ const MarketInfo = () => {
                 </tbody>
             </table>
 
-            <Paging
-                totalCount={marketData.length}
-                page={page}
-                dataPerPage={dataPerPage}
-                pageRangeDisplayed={5}
-                handlePageChange={handlePageChange}
-            />
+            {marketData.length > dataPerPage && (
+                <Paging
+                    totalCount={marketData.length}
+                    page={page}
+                    dataPerPage={dataPerPage}
+                    pageRangeDisplayed={5}
+                    handlePageChange={handlePageChange}
+                />
+            )}
         </div>
     );
 };

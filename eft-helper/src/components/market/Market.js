@@ -11,7 +11,6 @@ const Market = () => {
                 <h1>Helper</h1>
             </div>
             <Nav />
-            <MarketSearch />
             <MarketInfo />
         </div>
     );
