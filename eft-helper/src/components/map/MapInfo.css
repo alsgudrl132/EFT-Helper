@@ -9,7 +9,6 @@
     position: relative;
     margin: 25px;
     width: 45%;
-    box-sizing: border-box;
 }
 
 .map-container img {

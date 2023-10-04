@@ -1,5 +1,6 @@
 import mainlogo from '../../images/logo2.png';
 import Nav from '../Nav';
+import ArmorData from './ArmorData';
 
 const Armor = () => {
     return (
@@ -9,6 +10,7 @@ const Armor = () => {
                 <h1>Helper</h1>
             </div>
             <Nav />
+            <ArmorData />
         </div>
     );
 };

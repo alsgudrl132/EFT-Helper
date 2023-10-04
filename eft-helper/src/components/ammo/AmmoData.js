@@ -59,7 +59,7 @@ const AmmoData = ({ activeButton }) => {
                 <table className="ammo-table">
                     <thead className="ammo-thead">
                         <tr className="ammo-thead-tr">
-                            <th>탄약 사진</th>
+                            <th>탄약 이미지</th>
                             <th>탄약 종류</th>
                             <th>탄약 이름</th>
                             <th>탄약 데미지</th>
