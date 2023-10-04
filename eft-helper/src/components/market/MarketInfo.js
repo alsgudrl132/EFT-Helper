@@ -8,6 +8,7 @@ const MarketInfo = () => {
     const [currentData, setCurrentData] = useState([]);
     const [dataPerPage, setDataPerPage] = useState(15);
     const [page, setPage] = useState(1);
+    // eslint-disable-next-line
     const [searchValue, setSearchValue] = useState('');
 
     const handlePageChange = (pageNumber) => {
@@ -59,6 +60,11 @@ const MarketInfo = () => {
         setCurrentData(filteredData.slice(0, newDataPerPage));
     };
 
+    const addComma = (price) => {
+        let returnString = price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return returnString;
+    };
+
     return (
         <div className="market-container">
             <MarketSearch onSearch={handleSearchChange} />
@@ -79,7 +85,7 @@ const MarketInfo = () => {
                                 <img src={data.iconLink} alt={data.name} />
                             </td>
                             <td>{data.name}</td>
-                            <td>{data.lastLowPrice}</td>
+                            <td>{addComma(data.lastLowPrice)}</td>
                             <td>{data.updated}</td>
                         </tr>
                     ))}

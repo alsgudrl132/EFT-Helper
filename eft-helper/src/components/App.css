@@ -1,27 +1,28 @@
-.background::before {
-  content: "";
-  background: url("../images/main5.jpeg") no-repeat center fixed;
-  background-size: cover;
-  height: 650vh;
-  opacity: 0.7;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(../images/main5.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container img {
-  width: 300px;
+    width: 300px;
 }
 .container h1 {
-  font-size: 80px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-weight: bold;
+    font-size: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
 }

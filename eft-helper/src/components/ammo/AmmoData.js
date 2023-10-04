@@ -77,7 +77,7 @@ const AmmoData = ({ activeButton }) => {
                         {ammo.map((data, index) => (
                             <tr key={index} className="ammo-tbody-tr">
                                 <th>
-                                    <img src="#" alt={data.name} />
+                                    <img src={data.image} alt={data.name} />
                                 </th>
                                 <td>{data.id}</td>
                                 <td>{data.name}</td>
