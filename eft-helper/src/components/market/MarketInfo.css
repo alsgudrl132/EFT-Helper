@@ -47,19 +47,25 @@ ul.pagination li:first-child {
 ul.pagination li:last-child {
     border-radius: 0 5px 5px 0;
 }
-
+ul.pagination li {
+    background-color: #f1efef;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
 ul.pagination li a {
     text-decoration: none;
-    color: #f1efef;
+    color: black;
     font-size: 1rem;
 }
 
 ul.pagination li.active a {
-    color: white;
+    color: #f1efef;
 }
 
 ul.pagination li.active {
-    background-color: #337ab7;
+    background-color: black;
+    border-radius: 5px;
 }
 
 ul.pagination li a:hover,

@@ -1,5 +1,4 @@
 import Search from './Search';
-import { useState, useEffect } from 'react';
 
 const ArmorData = ({ searchValue }) => {
     return (

@@ -54,6 +54,7 @@ const MapInfo = () => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
+
     return (
         <div>
             <div className="map-container">
@@ -68,11 +69,13 @@ const MapInfo = () => {
                     </div>
                 ))}
             </div>
+
             {isModalOpen && (
                 <MapModal
                     mapSrc={maps[bgMaps.findIndex((bgMap) => bgMap.text === selectedMap)]}
                     altText={selectedMap}
                     closeModal={closeModal}
+                    isModalOpen={isModalOpen}
                 />
             )}
         </div>

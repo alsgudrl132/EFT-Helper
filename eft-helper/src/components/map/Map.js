@@ -56,10 +56,12 @@ const Map = () => {
             <div className="container">
                 <div className="license-container">
                     <div>
-                        {license.map((data) => (
-                            <div className="license-box">
+                        {license.map((data, index) => (
+                            <div key={index} className="license-box">
                                 <p>{data.make}</p>
-                                <a href={data.source}>{data.source}</a>
+                                <a href={data.source} target="blink">
+                                    {data.source}
+                                </a>
                             </div>
                         ))}
                     </div>

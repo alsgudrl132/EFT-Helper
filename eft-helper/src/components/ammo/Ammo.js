@@ -89,6 +89,18 @@ const Ammo = (props) => {
                 </div>
             </div>
             <AmmoData activeButton={activeButton} />
+            <div className="container">
+                <div className="license-container">
+                    <div>
+                        <div className="license-box">
+                            <p>모든 탄약 관련 데이터는 EFT-AMMO에서 불러왔습니다.</p>
+                            <a href="https://www.eft-ammo.com/" target="blink">
+                                https://www.eft-ammo.com/
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

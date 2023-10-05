@@ -58,3 +58,6 @@ th {
 .ammo-thead-tr th:nth-child(n + 3) {
     padding: 0px 8px;
 }
+.ammo-main-container {
+    margin-bottom: 50px;
+}

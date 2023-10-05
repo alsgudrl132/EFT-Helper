@@ -40,10 +40,8 @@ const AmmoData = ({ activeButton }) => {
 
         return { backgroundColor: color }; // 스타일 객체로 반환
     }
-
-    console.log(ammo);
     return (
-        <div>
+        <div className="ammo-main-container">
             <div className="ammo-text-container">
                 <div>
                     <h2>밑의 숫자는 관통수치를 간단하게 나타낸것(참고만 할 것)</h2>
@@ -63,6 +61,7 @@ const AmmoData = ({ activeButton }) => {
                             <th>탄약 종류</th>
                             <th>탄약 이름</th>
                             <th>탄약 데미지</th>
+                            <th>스피드</th>
                             <th>반동</th>
                             <th>정밀도</th>
                             <th>클래스1</th>
@@ -82,7 +81,8 @@ const AmmoData = ({ activeButton }) => {
                                 <td>{data.id}</td>
                                 <td>{data.name}</td>
                                 <td>{data.damage}</td>
-                                <td style={getRecoilStyle(data.speed)}>{data.speed}</td>
+                                <td>{data.speed}</td>
+                                <td style={getRecoilStyle(data.recoil)}>{data.recoil}</td>
                                 <td style={getAccuracyStyle(data.accuracy)}>{data.accuracy}</td>
                                 <td style={getPenetrateStyle(data.class1)}>{data.class1}</td>
                                 <td style={getPenetrateStyle(data.class2)}>{data.class2}</td>
