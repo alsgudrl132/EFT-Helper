@@ -7,8 +7,9 @@ const AmmoData = ({ activeButton }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://125.142.47.191:5000/EFT_API/ALL_SELECT');
+                const response = await fetch('http://125.142.47.191:5000/EFT_API/AMMO_ALL_SELECT');
                 const data = await response.json();
+                console.log(data);
                 const filteredData = activeButton ? data.filter((item) => item.id === activeButton) : data;
                 setAmmo(filteredData);
             } catch (error) {
@@ -61,7 +62,7 @@ const AmmoData = ({ activeButton }) => {
                             <th>탄약 종류</th>
                             <th>탄약 이름</th>
                             <th>탄약 데미지</th>
-                            <th>스피드</th>
+                            <th>탄속</th>
                             <th>반동</th>
                             <th>정밀도</th>
                             <th>클래스1</th>
