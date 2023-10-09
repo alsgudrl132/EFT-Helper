@@ -1,18 +1,18 @@
-.armor-text-container {
+.headwear-text-container {
   display: flex;
   justify-content: center;
   margin: 20px 0px;
 }
-.armor-text-container h2 {
+.headwear-text-container h2 {
   font-size: 20px;
   padding: 10px 20px;
 }
-.armor-text-container h2 {
+.headwear-text-container h2 {
   background-color: black;
   color: #f1efef;
 }
 
-.armor-container {
+.headwear-container {
   margin-top: 25px;
   display: flex;
   justify-content: center;
@@ -22,19 +22,19 @@ th {
   background-color: black;
   padding: 10px 0px;
 }
-.armor-tbody-tr :nth-child(n + 2) {
+.headwear-tbody-tr :nth-child(n + 2) {
   background-color: #f1efef;
   padding: 0px 10px;
 }
-.armor-tbody-tr td {
+.headwear-tbody-tr td {
   text-align: center;
   vertical-align: middle;
   border: 1px solid black;
 }
 
-.armor-thead-tr th:nth-child(n + 3) {
+.headwear-thead-tr th:nth-child(n + 3) {
   padding: 0px 8px;
 }
-.armor-img {
+.headwear-img {
   width: 90px;
 }

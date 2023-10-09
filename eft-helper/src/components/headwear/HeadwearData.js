@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import armorTest from "../../images/3M_icon.webp";
-import "./ArmorData.css";
+import headwearTest from "../../images/3M_icon.webp";
+import "./HeadwearData.css";
 
-const ArmorData = ({ searchValue }) => {
-  const [armor, setArmor] = useState([]);
+const HeadwearData = ({ searchValue }) => {
+  const [headwear, setheadwear] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://125.142.47.191:5000/EFT_API/ARMOR_ALL_SELECT");
         const data = await response.json();
         console.log(data);
-        setArmor(data);
+        setheadwear(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -20,15 +20,15 @@ const ArmorData = ({ searchValue }) => {
   }, []);
   return (
     <div>
-      <div className="armor-text-container">
+      <div className="headwear-text-container">
         <div>
-          <h2>방탄 정보</h2>
+          <h2>헬멧 정보</h2>
         </div>
       </div>
-      <div className="armor-container">
-        <table className="armor-table">
-          <thead className="armor-thead">
-            <tr className="armor-thead-tr">
+      <div className="headwear-container">
+        <table className="headwear-table">
+          <thead className="headwear-thead">
+            <tr className="headwear-thead-tr">
               <th>방탄 이미지</th>
               <th>이름</th>
               <th>방탄 클래스</th>
@@ -41,11 +41,11 @@ const ArmorData = ({ searchValue }) => {
               <th>무게</th>
             </tr>
           </thead>
-          <tbody className="armor-tbody">
-            {armor.map((data, index) => (
-              <tr key={index} className="armor-tbody-tr">
+          <tbody className="headwear-tbody">
+            {headwear.map((data, index) => (
+              <tr key={index} className="headwear-tbody-tr">
                 <th>
-                  <img className="armor-img" src={armorTest} alt="3M Icon" />
+                  <img className="headwear-img" src={headwearTest} alt="3M Icon" />
                 </th>
                 <td>{data.name}</td>
                 <td>{data.class}</td>
@@ -64,4 +64,4 @@ const ArmorData = ({ searchValue }) => {
     </div>
   );
 };
-export default ArmorData;
+export default HeadwearData;
