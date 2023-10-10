@@ -24,12 +24,11 @@ Escape From Tarkov Helper 이 프로젝트는 "이스케이프 프롬 타르코�
 
 프로젝트를 설치하고 실행하는 방법은 다음과 같습니다.
 
-1. GitHub 리포지터리를 클론합니다.
-
 ```bash
 git clone https://github.com/alsgudrl132/EFT-Helper.git
 프로젝트 폴더로 이동합니다. ( cd eft-helper )
 npm install
+npm i styled-components
 npm start
 
 작성자
