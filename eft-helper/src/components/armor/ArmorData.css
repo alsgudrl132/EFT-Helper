@@ -1,40 +1,40 @@
 .armor-text-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
 }
 .armor-text-container h2 {
-  font-size: 20px;
-  padding: 10px 20px;
+    font-size: 20px;
+    padding: 10px 20px;
 }
 .armor-text-container h2 {
-  background-color: black;
-  color: #f1efef;
+    background-color: black;
+    color: #f1efef;
 }
 
 .armor-container {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
 }
 th {
-  color: #f1efef;
-  background-color: black;
-  padding: 10px 0px;
+    color: #f1efef;
+    background-color: black;
+    padding: 10px 0px;
 }
 .armor-tbody-tr :nth-child(n + 2) {
-  background-color: #f1efef;
-  padding: 0px 10px;
+    background-color: #f1efef;
+    padding: 0px 10px;
 }
 .armor-tbody-tr td {
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
 }
 
 .armor-thead-tr th:nth-child(n + 3) {
-  padding: 0px 8px;
+    padding: 0px 8px;
 }
 .armor-img {
-  width: 90px;
+    width: 120px;
 }
