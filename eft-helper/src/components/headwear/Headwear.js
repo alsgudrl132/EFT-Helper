@@ -1,7 +1,6 @@
 import mainlogo from '../../images/logo2.png';
 import Nav from '../Nav';
 import HeadwearData from './HeadwearData';
-let i = 0;
 
 const Headwear = () => {
     return (
