@@ -10,6 +10,7 @@
 }
 .license-container p {
     font-weight: 600;
+    margin-bottom: 10px;
 }
 .license-box {
     margin-bottom: 10px;
@@ -17,4 +18,9 @@
 .license-container a {
     text-decoration: none;
     color: blue;
+}
+.license-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }

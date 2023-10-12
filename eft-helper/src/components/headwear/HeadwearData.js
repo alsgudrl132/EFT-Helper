@@ -21,6 +21,19 @@ const HeadwearData = ({ searchValue }) => {
 
         fetchData();
     }, []);
+    const getStyle = (headwearStatus) => {
+        if (headwearStatus.includes('-')) {
+            return { color: 'red' };
+        }
+        return {};
+    };
+    const getHeadsetStyle = (headwearStatus) => {
+        if (headwearStatus.includes('No')) {
+            return { color: '#32CD32' };
+        } else if (headwearStatus.includes('Yes')) {
+            return { color: 'red' };
+        }
+    };
     return (
         <div>
             <div className="headwear-text-container">
@@ -38,12 +51,12 @@ const HeadwearData = ({ searchValue }) => {
                             <th>보호부위</th>
                             <th>재질</th>
                             <th>내구도</th>
+                            <th>인체공학</th>
                             <th>이동속도</th>
                             <th>회전속도</th>
                             <th>도탄확률</th>
                             <th>소음감소</th>
-                            <th>인체공학</th>
-                            <th>헤드셋 착용 가능여부</th>
+                            <th>헤드셋 착용불가</th>
                             <th>타입</th>
                             <th>무게</th>
                         </tr>
@@ -59,12 +72,12 @@ const HeadwearData = ({ searchValue }) => {
                                 <td>{data.areas}</td>
                                 <td>{data.material}</td>
                                 <td>{data.durability}</td>
-                                <td>{data.movement_speed}</td>
-                                {data.turning_speed === 'None' ? <td>기본</td> : <td>{data.turning_speed}</td>}
+                                <td style={getStyle(data.ergo_nomics)}>{data.ergo_nomics}</td>
+                                <td style={getStyle(data.movement_speed)}>{data.movement_speed}</td>
+                                <td style={getStyle(data.turning_speed)}>{data.turning_speed}</td>
                                 <td>{data.ricochet_chance}</td>
                                 <td>{data.sound_reduction}</td>
-                                <td>{data.ergo_nomics}</td>
-                                <td>{data.blocks_headset}</td>
+                                <td style={getHeadsetStyle(data.blocks_headset)}>{data.blocks_headset}</td>
                                 <td>{data.type}</td>
                                 <td>{data.weight}</td>
                             </tr>
